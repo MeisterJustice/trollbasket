@@ -14,6 +14,7 @@ const COLORS = {
   PURPLE: "#7E42F5",
   ORANGE: "#EE6F44",
   GREEN: "#05944F",
+  YELLOW: "#FFCA42",
 };
 
 export default COLORS;

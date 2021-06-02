@@ -15,7 +15,7 @@ export const TextDiv = styled.span`
   font-family: ${(props) => (props.family ? props.family : null)};
   font-style: ${(props) => (props.fontStyle ? props.fontStyle : "normal")};
   font-weight: ${(props) => (props.weight ? props.weight : "normal")};
-  font-size: ${(props) => (props.size ? props.size : "10")}px;
+  font-size: ${(props) => (props.size ? props.size : "16")}px;
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : null)}px;
   letter-spacing: ${(props) =>
     props.letterSpacing ? props.letterSpacing : "0.15px"};
