@@ -33,6 +33,7 @@ const Text = (props) => {
         select={props.select}
         fontStyle={props.fontStyle}
         lineThrough={props.lineThrough}
+        align={props.align}
         onClick={props.onClick || (() => {})}
       >
         {props.children}
