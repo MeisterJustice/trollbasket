@@ -2,6 +2,9 @@ import {
   loadProductsFailure,
   loadProductsSuccess,
   LOAD_PRODUCTS,
+  loadProductFailure,
+  loadProductSuccess,
+  LOAD_PRODUCT,
 } from "../actions/products";
 import * as uiActions from "../actions/ui";
 
@@ -24,4 +27,23 @@ const loadProductsFlow =
     }
   };
 
-export default [loadProductsFlow];
+const loadProductFlow =
+  ({ api }) =>
+  ({ dispatch }) =>
+  (next) =>
+  async (action) => {
+    next(action);
+
+    if (action.type === LOAD_PRODUCT) {
+      try {
+        dispatch(uiActions.setLoading(true));
+        const product = await api.product.get();
+        dispatch(loadProductSuccess(product));
+        dispatch(uiActions.setLoading(false));
+      } catch (error) {
+        dispatch(loadProductFailure(error));
+      }
+    }
+  };
+
+export default [loadProductsFlow, loadProductFlow];

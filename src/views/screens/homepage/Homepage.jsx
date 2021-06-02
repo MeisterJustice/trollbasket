@@ -53,6 +53,10 @@ const Homepage = () => {
             </Row>
           </Margin>
         )}
+        <Space small />
+        <Space small />
+        <Space small />
+        <Space small />
         <BottomNavigation />
       </MainContainer>
     </>

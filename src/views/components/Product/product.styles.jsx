@@ -8,4 +8,7 @@ export const Product = styled.div`
     object-fit: contain;
     border-radius: 20px;
   }
+  .test-deco {
+    text-decoration: none;
+  }
 `;
