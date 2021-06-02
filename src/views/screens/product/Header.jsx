@@ -40,7 +40,13 @@ const Header = () => {
               ) : (
                 <div>
                   <FontAwesomeIcon
-                    onClick={index === 0 ? () => history.goBack() : null}
+                    onClick={
+                      index === 0
+                        ? () => history.goBack()
+                        : index === 3
+                        ? () => history.push("/cart")
+                        : null
+                    }
                     color={COLORS.DARK_GREY}
                     icon={data}
                   />
