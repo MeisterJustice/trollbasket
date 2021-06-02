@@ -6,17 +6,16 @@ export const TextDiv = styled.span`
   align-items: center;
   height: ${(props) => (props.height ? props.height : null)}px;
   width: ${(props) => (props.width ? props.width : null)}px;
-
   margin-left: ${(props) => (props.indentLeft ? props.indentLeft : null)}px;
   margin-right: ${(props) => (props.indentRight ? props.indentRight : null)}px;
   margin-top: ${(props) => (props.indentTop ? props.indentTop : null)}px;
   margin-bottom: ${(props) =>
     props.indentBottom ? props.indentBottom : null}px;
-
+  text-align: ${(props) => (props.align ? props.align : "left")};
   font-family: ${(props) => (props.family ? props.family : null)};
   font-style: ${(props) => (props.fontStyle ? props.fontStyle : "normal")};
   font-weight: ${(props) => (props.weight ? props.weight : "normal")};
-  font-size: ${(props) => (props.size ? props.size : "16")}px;
+  font-size: ${(props) => (props.size ? props.size : "10")}px;
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : null)}px;
   letter-spacing: ${(props) =>
     props.letterSpacing ? props.letterSpacing : "0.15px"};
