@@ -39,4 +39,5 @@ export const Space = styled.div`
   ${(props) => (props.small ? "margin-top: 30px" : "")};
   ${(props) => (props.smaller ? "margin-top: 7%" : "")};
   ${(props) => (props.smallest ? "margin-top: 3%" : "")};
+  ${(props) => (props.tiny ? "margin-top: 2px" : "")};
 `;

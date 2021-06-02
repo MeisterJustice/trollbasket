@@ -20,9 +20,10 @@ export const loadProductsFailure = (error) => ({
   payload: error,
 });
 
-export const loadProduct = {
+export const loadProduct = (id) => ({
   type: LOAD_PRODUCT,
-};
+  id,
+});
 
 export const loadProductSuccess = (product) => ({
   type: LOAD_PRODUCT_SUCCESS,

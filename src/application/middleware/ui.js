@@ -1,4 +1,4 @@
-import { PAGE_LOADED } from "../actions/ui";
+import { PAGE_LOADED, PRODUCT_LOADED } from "../actions/ui";
 import * as ProductsActions from "../actions/products";
 
 const pageLoadedFlow =
@@ -14,4 +14,17 @@ const pageLoadedFlow =
     }
   };
 
-export default [pageLoadedFlow];
+const productLoadedFlow =
+  ({ log }) =>
+  ({ dispatch }) =>
+  (next) =>
+  (action) => {
+    next(action);
+
+    if (action.type === PRODUCT_LOADED) {
+      log("product loaded");
+      dispatch(ProductsActions.loadProduct(action.id));
+    }
+  };
+
+export default [pageLoadedFlow, productLoadedFlow];

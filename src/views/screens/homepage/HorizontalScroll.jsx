@@ -2,6 +2,8 @@ import React from "react";
 import { Row } from "../../components/Layout";
 import { HorizontalScroll } from "./Homepage.styles";
 import Text from "../../components/Typography/Text";
+import Button from "../../components/Button";
+import { COLORS } from "../../constants";
 
 const Horizontal = () => {
   return (
@@ -34,9 +36,13 @@ const Horizontal = () => {
               />
               <Text white weight="600" children="your order?" />
             </div>
-            <div>
-              <button className="btn">Contact Us</button>
-            </div>
+            <Button
+              height="31"
+              width="91"
+              bg={COLORS.BLUE}
+              color={COLORS.WHITE}
+              text="Contact Us"
+            />
           </Row>
         </div>
         <div className="card third-card">

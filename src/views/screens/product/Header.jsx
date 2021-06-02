@@ -9,10 +9,13 @@ import {
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import Title from "../../components/Typography/Title";
+import { useHistory } from "react-router-dom";
 
 const headerIcons = [faArrowLeft, "Details", faSearch, faShoppingCart];
 
 const Header = () => {
+  let history = useHistory();
+
   return (
     <ProductHeader>
       <Row justify="space-between" align="center">
@@ -35,7 +38,14 @@ const Header = () => {
                   </Row>
                 </div>
               ) : (
-                <FontAwesomeIcon color={COLORS.DARK_GREY} icon={data} />
+                <div>
+                  <FontAwesomeIcon
+                    onClick={index === 0 ? () => history.goBack() : null}
+                    color={COLORS.DARK_GREY}
+                    icon={data}
+                  />
+                  {/* {index === 3 && <div className="cart">4</div>} */}
+                </div>
               )}
             </Row>
           </div>

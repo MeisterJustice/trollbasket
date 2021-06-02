@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Product = styled.div`
   height: 210px;
-  width: 105px;
+  width: 100%;
   margin-top: 20px;
   .image {
     object-fit: contain;

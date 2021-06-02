@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const ProductItem = ({ data }) => {
   return (
-    <div>
+    <div style={{ width: "30%" }}>
       <Product>
         <Link className="test-deco" to={`/product/${data.id}`}>
           <Column>

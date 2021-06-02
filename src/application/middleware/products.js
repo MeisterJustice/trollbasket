@@ -37,7 +37,7 @@ const loadProductFlow =
     if (action.type === LOAD_PRODUCT) {
       try {
         dispatch(uiActions.setLoading(true));
-        const product = await api.product.get();
+        const product = await api.product.get(action.id);
         dispatch(loadProductSuccess(product));
         dispatch(uiActions.setLoading(false));
       } catch (error) {
