@@ -31,6 +31,13 @@ const ProductItem = ({ data }) => {
               children={data.price}
             />
             <Space tiny />
+            <Space tiny />
+            <Space tiny />
+            <Space tiny />
+            <Space tiny />
+            <Space tiny />
+            <Space tiny />
+
             <Text className="font" size="10" grey>
               {`${data.stock} (pieces)`}
             </Text>

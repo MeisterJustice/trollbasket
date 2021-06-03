@@ -17,9 +17,9 @@ const Input = ({ location }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (location) {
-      history.push(`/search?location=${text}`);
+      history.push(`/search?location=${text.toLowerCase()}`);
     } else {
-      history.push(`/search?name=${text}`);
+      history.push(`/search?name=${text.toLowerCase()}`);
     }
   };
   return (

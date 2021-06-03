@@ -43,14 +43,14 @@ export const TitleDiv = styled.h1`
   align-items: center;
   height: ${(props) => (props.height ? props.height : null)}px;
   width: ${(props) => (props.width ? props.width : null)}px;
-
+  margin: 0;
   font-family: ${(props) => (props.family ? props.family : null)};
   font-style: normal;
   font-weight: ${(props) => (props.weight ? props.weight : "normal")};
   font-size: ${(props) => (props.size ? props.size : "32")}px;
   line-height: ${(props) => (props.lineHeight ? props.lineHeight : null)}px;
   letter-spacing: ${(props) =>
-    props.letterSpacing ? props.letterSpacing : "0.15px"};
+    props.letterSpacing ? props.letterSpacing : "0.1px"};
   color: ${COLORS.LIGHTER_GREY};
   ${(props) => (props.darkGreen ? `color: ${COLORS.DARK_GREEN}` : null)};
   ${(props) => (props.blue ? `color: ${COLORS.BLUE}` : null)};

@@ -9,7 +9,7 @@ import {
   faHeart,
   faHome,
 } from "@fortawesome/free-solid-svg-icons";
-import Text from "../../components/Typography/Text";
+import Title from "../../components/Typography/Title";
 
 const FeaturedCategories = () => {
   return (
@@ -27,9 +27,8 @@ const FeaturedCategories = () => {
               </Row>
             </Featured>
             <Space smaller />
-            <Text align="center" size="7" grey children={data.text1} />
-            <Space smallest />
-            <Text align="center" size="7" grey children={data.text2} />
+            <Title align="center" size="13" grey children={data.text1} />
+            <Title align="center" size="13" grey children={data.text2} />
           </Column>
         </FeaturedContainer>
       ))}
