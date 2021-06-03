@@ -23,12 +23,17 @@ export const HomeHeader = styled.div`
   }
   .select {
     border: none;
-    font-size: 16px;
+    font-size: 15px;
+    background: ${COLORS.WHITE};
+    width: 75px;
+    padding-top: 2px;
+    color: ${COLORS.BLACK};
   }
 
   .opt {
     border: none;
-    font-size: 16px;
+    font-size: 13px;
+    color: ${COLORS.BLACK};
   }
 `;
 

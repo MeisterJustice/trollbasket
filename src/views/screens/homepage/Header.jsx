@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Row } from "../../components/Layout";
-import Text from "../../components/Typography/Text";
 import { HomeHeader, Margin } from "./Homepage.styles";
 import { COLORS } from "../../constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,6 +9,7 @@ import {
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
+import Title from "../../components/Typography/Title";
 
 const headerTexts = ["Lagos", "My Orders", "Cart"];
 
@@ -68,7 +68,7 @@ const Header = () => {
                     className="select"
                   >
                     <option value="" className="opt">
-                      Location
+                      Locate
                     </option>
                     <option value="lagos" className="opt">
                       Lagos
@@ -87,7 +87,7 @@ const Header = () => {
                     </option>
                   </select>
                 ) : (
-                  <Text children={text} black />
+                  <Title size={14} children={text} black />
                 )}
               </Row>
             </div>

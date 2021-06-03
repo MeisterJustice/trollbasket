@@ -57,6 +57,10 @@ const Homepage = () => {
         <Space small />
         <Space small />
         <Space small />
+        <Space small />
+        <Space small />
+        <Space small />
+        <Space small />
         <BottomNavigation />
       </MainContainer>
     </>
