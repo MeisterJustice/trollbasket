@@ -5,7 +5,7 @@ const Button = (props) => {
   return (
     <ButtonContainer {...props}>
       <button
-        onClick={props.handleClick ? () => props.handleClick : null}
+        onClick={props.handleClick ? props.handleClick : null}
         className="btn"
       >
         {props.text}

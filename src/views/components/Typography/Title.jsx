@@ -15,6 +15,7 @@ const Title = (props) => {
         letterSpacing={props.letterSpacing}
         blue={props.blue}
         grey={props.grey}
+        darkGreen={props.darkGreen}
         darkGrey={props.darkGrey}
         lightGrey={props.lightGrey}
         family={props.family}

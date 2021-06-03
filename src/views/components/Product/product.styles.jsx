@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const ProductContainer = styled.div`
+  width: 30%;
+  margin-top: 20px;
+`;
+
 export const Product = styled.div`
   height: 210px;
   width: 100%;

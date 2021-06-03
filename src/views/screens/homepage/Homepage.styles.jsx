@@ -21,6 +21,15 @@ export const HomeHeader = styled.div`
     height: 35px;
     width: 35px;
   }
+  .select {
+    border: none;
+    font-size: 16px;
+  }
+
+  .opt {
+    border: none;
+    font-size: 16px;
+  }
 `;
 
 export const HomeInput = styled.div`
@@ -36,12 +45,12 @@ export const HomeInput = styled.div`
     padding: 10px;
     min-width: 50px;
     font-size: 20px;
-    margin-top: 7px;
+    margin-top: 3px;
   }
 
   .input-field {
     width: 95%;
-    height: 35px;
+    height: 45px;
     padding: 10px;
     text-align: center;
     background: ${COLORS.LIGHTEST_GREY};

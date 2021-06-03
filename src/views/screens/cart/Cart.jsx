@@ -9,7 +9,13 @@ import CartItem from "./CartItem";
 import Header from "./Header";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../../application/selectors/products";
-import { pageLoaded } from "../../../application/actions/ui";
+import { getCarts } from "../../../application/selectors/carts";
+import {
+  pageLoaded,
+  cartsLoaded,
+  cartUpdated,
+  cartDeleted,
+} from "../../../application/actions/ui";
 import { getLoading } from "../../../application/selectors/ui";
 import ProductItem from "../../components/Product";
 import Text from "../../components/Typography/Text";
@@ -17,11 +23,26 @@ import Text from "../../components/Typography/Text";
 const Cart = () => {
   const dispatch = useDispatch();
   const products = useSelector(getProducts);
+  const carts = useSelector(getCarts);
+
   const loading = useSelector(getLoading);
 
   useEffect(() => {
     dispatch(pageLoaded);
+    dispatch(cartsLoaded);
   }, [dispatch]);
+
+  const handleUpdate = (id, action, quantity) => {
+    if (action === "minus" && quantity === 1) {
+      return;
+    } else {
+      dispatch(cartUpdated(id, action));
+    }
+  };
+
+  const handleDelete = (id) => {
+    dispatch(cartDeleted(id));
+  };
   return (
     <>
       <MainContainer>
@@ -34,8 +55,13 @@ const Cart = () => {
         <CartContainer>
           <Space smallest />
           <Margin>
-            {[1, 2, 3].map((cart, index) => (
-              <CartItem key={index} />
+            {carts?.map((cart, index) => (
+              <CartItem
+                handleDelete={handleDelete}
+                handleUpdate={handleUpdate}
+                cart={cart}
+                key={index}
+              />
             ))}
           </Margin>
           <Space small />
@@ -85,11 +111,12 @@ const Cart = () => {
                 <Text>Loading</Text>
               ) : (
                 <Row justify="space-between">
-                  {products.map((data) => (
+                  {products.slice(0, 6).map((data) => (
                     <ProductItem key={data.id} data={data} />
                   ))}
                 </Row>
               )}
+              <Space />
             </Margin>
           </Container>
         </CartContainer>

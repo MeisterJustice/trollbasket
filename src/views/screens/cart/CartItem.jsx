@@ -8,26 +8,21 @@ import { COLORS } from "../../constants";
 import Text from "../../components/Typography/Text";
 import Button from "../../components/Button";
 
-const CartItem = () => {
+const CartItem = ({ cart, handleUpdate, handleDelete }) => {
   return (
     <Container>
       <Row justify="center" align="center">
         <Box>
           <div>
             <Row justify="flex-start" align="center">
-              <img
-                alt="cart-item"
-                height="48"
-                width="48"
-                src="https://drinkallotters.com.ng/wp-content/uploads/2018/12/365.jpg"
-              />
+              <img alt="cart-item" height="50" width="50" src={cart.image} />
               <Margin>
                 <Title size="16" lightGrey>
-                  2019 Vintage Coca Cola
+                  {cart.name}
                 </Title>
                 <Space smallest />
                 <Title weight="600" size="16" darkGrey>
-                  18,000
+                  {cart.price}
                 </Title>
               </Margin>
             </Row>
@@ -40,7 +35,7 @@ const CartItem = () => {
                   <Row justify="flex-start" align="center">
                     <FontAwesomeIcon
                       className="trash"
-                      onClick={() => null}
+                      onClick={() => handleDelete(cart.id)}
                       color={COLORS.RED}
                       icon={faTrash}
                     />
@@ -59,9 +54,12 @@ const CartItem = () => {
                       color={COLORS.BLUE}
                       text="-"
                       radius="30"
+                      handleClick={() =>
+                        handleUpdate(cart.id, "minus", cart.quantity)
+                      }
                     />
                     <Margin>
-                      <Text black>24</Text>
+                      <Text black>{cart.quantity}</Text>
                     </Margin>
                     <Button
                       height="30"
@@ -71,6 +69,9 @@ const CartItem = () => {
                       color={COLORS.BLUE}
                       text="+"
                       radius="30"
+                      handleClick={() =>
+                        handleUpdate(cart.id, "add", cart.quantity)
+                      }
                     />
                   </Row>
                 </div>

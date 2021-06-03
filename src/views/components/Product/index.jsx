@@ -1,12 +1,13 @@
 import React from "react";
 import { Column, Space } from "../Layout";
 import Text from "../Typography/Text";
-import { Product } from "./product.styles";
+import { Product, ProductContainer } from "./product.styles";
 import { Link } from "react-router-dom";
+import Title from "../Typography/Title";
 
 const ProductItem = ({ data }) => {
   return (
-    <div style={{ width: "30%" }}>
+    <ProductContainer>
       <Product>
         <Link className="test-deco" to={`/product/${data.id}`}>
           <Column>
@@ -20,21 +21,23 @@ const ProductItem = ({ data }) => {
             <Space smaller />
             <Text height="35" grey children={`${data.name.substring(0, 25)}`} />
             <Space smaller />
-            <Text
-              height="14"
+            <Space smaller />
+
+            <Title
+              height="16"
               black
               weight="600"
               size="16"
               children={data.price}
             />
-            <Space smaller />
+            <Space tiny />
             <Text className="font" size="10" grey>
               {`${data.stock} (pieces)`}
             </Text>
           </Column>
         </Link>
       </Product>
-    </div>
+    </ProductContainer>
   );
 };
 
