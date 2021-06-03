@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { MainContainer } from "../../components/Containers/Containers.styles";
 import { Row, Space } from "../../components/Layout";
 import Header from "./Header";
@@ -21,17 +21,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { COLORS } from "../../constants";
 import Button from "../../components/Button";
+import { cartsLoaded, cartAdded } from "../../../application/actions/ui";
+import Error from "../../components/Error";
 
 const Product = (props) => {
   const dispatch = useDispatch();
   const product = useSelector(getProduct);
   const loading = useSelector(getLoading);
 
+  const [showSuccess, setShowSuccess] = useState(false);
+
   useEffect(() => {
     dispatch(productLoaded(props.match.params.product_id));
+    dispatch(cartsLoaded);
   }, [dispatch, props.match.params.product_id]);
 
-  const handleAddToCart = () => {};
+  const handleAddToCart = () => {
+    console.log("clicked", product);
+    dispatch(cartAdded(product));
+    setShowSuccess(true);
+    // setTimeout(() => {
+    //   setShowSuccess(false);
+    // }, 4000);
+  };
   return (
     <>
       <MainContainer>
@@ -45,6 +57,11 @@ const Product = (props) => {
           <Text>Loading</Text>
         ) : (
           <ProductContainer>
+            <Error
+              show={showSuccess}
+              setShow={setShowSuccess}
+              text="Item added to cart successfully"
+            />
             <ProductImageContainer>
               <Row align="center" justify="center">
                 <img

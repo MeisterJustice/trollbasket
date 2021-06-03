@@ -52,7 +52,7 @@ export const TitleDiv = styled.h1`
   letter-spacing: ${(props) =>
     props.letterSpacing ? props.letterSpacing : "0.15px"};
   color: ${COLORS.LIGHTER_GREY};
-
+  ${(props) => (props.darkGreen ? `color: ${COLORS.DARK_GREEN}` : null)};
   ${(props) => (props.blue ? `color: ${COLORS.BLUE}` : null)};
   ${(props) => (props.darkGrey ? `color: ${COLORS.DARK_GREY}` : null)};
   ${(props) => (props.grey ? `color: ${COLORS.GREY}` : null)};

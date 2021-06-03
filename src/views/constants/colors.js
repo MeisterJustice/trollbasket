@@ -14,6 +14,8 @@ const COLORS = {
   PURPLE: "#7E42F5",
   ORANGE: "#EE6F44",
   GREEN: "#05944F",
+  DARK_GREEN: "#023B20",
+  LIGHT_GREEN: "#D3FDE9",
   YELLOW: "#FFCA42",
 };
 
